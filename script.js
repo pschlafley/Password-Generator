@@ -1,36 +1,35 @@
-var passCriteria = {
-    upper:  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'],
-    lower: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
-    special: ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '=', '?', '>', '<'],
-    numbers: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-};
+ // var generateBtn = document.getElementById(generate);
 
-//ask for length of password
-var length = Number(prompt("How many characters do you want your password to be?"));
-if (length >= 8 && length <= 128) {
-    generatePassword();
-} 
-else {
-        window.alert("Password must be between at least 8 characters long!");
-    };
-
+  //generateBtn.addEventListener("click", generatePassword);
 
 // create a function that asks each question and prompts the user to confirm 
 
-function generatePassword () {
-        var charTypeUpper = confirm("Do you want uppercase characters? If yes click the OK button");
-        while (charTypeUpper === true) {
-            passCriteria.upper = new Uint32Array(26);
 
-            window.crypto.getRandomValues(passCriteria.upper);
+var passWord= "";
+var upperCase =  "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowerCase = "abcdevghijklmnopqrstuv";
+var special = "~!@#$%^&*() _+=?><";
+var numbers = "1234567890";
 
-            console.log("your random letters:");
+var length = Number(prompt("How many characters do you want your password to be?"));
+if (length >= 8 && length <= 100) {
+    generatePassword();
+}
+else {
+    window.alert("Must be 8 or more!");
+}
 
-            for (var i = 0; i < passCriteria.upper.length; i++) {
-                console.log(passCriteria.upper[i]);
-            }    
-        } 
-};
+function generatePassword() {
+
+    window.confirm("Do you want uppercase characters? If yes click the OK button"); 
+    while (passWord.length >= 8 || passWord.length < 70) {
+        passWord += upperCase[Math.floor(Math.random()) * upperCase];
+    }
+};    
+generatePassword();
+
+      
+
 
 
 
