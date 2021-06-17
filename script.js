@@ -20,7 +20,8 @@ function generatePassword() {
     let passwordLength = window.prompt("How many characters do you want in your password?");
 
     if (passwordLength < 8 || passwordLength > 20) {
-        window.alert('Password must be between 8 and 15! Hit the Generate Password Button again!');
+        window.alert('Password must be between 8 and 20! Hit the Generate Password Button again!');
+        return;
     };
 
     let upperConfirm = window.confirm('Do you want UpperCase Characters?');
