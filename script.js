@@ -6,7 +6,7 @@
 
 
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var lowerCase = "abcdevghijklmnopqrstuv";
+var lowerCase = "abcdevghijklmnopqrstuvwxyz";
 var special = "~!@#$%^&*()_+=?><";
 var numbers = "1234567890";
 
@@ -27,7 +27,7 @@ function generatePassword() {
     let upperConfirm = window.confirm('Do you want UpperCase Characters?');
     let lowerConfirm = window.confirm('Do you want lowerCase Characters?');
     let specialConfirm = window.confirm('Do you want special Charaters?');
-    let numbersConfirm = window.confirm('Do you wan Numbers?');
+    let numbersConfirm = window.confirm('Do you want Numbers?');
 
     if (upperConfirm) {
         possibleChars += upperCase;
